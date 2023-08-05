@@ -1,0 +1,39 @@
+@import 'src/index.scss';
+
+.wrapper {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.cycle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-primary;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 40%;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.text {
+  border: $border-width solid $color-primary;
+  border-radius: 5px;
+  background-color: $color-primary;
+  padding: $padding-desktop;
+  word-wrap: wrap;
+}
+
+.date {
+  font-size: 11px;
+  text-align: right;
+}

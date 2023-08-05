@@ -1,0 +1,31 @@
+@import "Fonts.scss";
+
+// colors
+$color-primary: rgb(86, 181, 184);
+$color-secondary: rgb(152, 207, 195);
+$color-text: #383838;
+
+// paddings
+$padding-desktop: 5%;
+
+// borders
+$border-width: 2px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat Regular;
+  color: $color-text;
+}
+
+body {
+  height: 100vh;
+  background: -webkit-linear-gradient(45deg, $color-secondary, $color-primary);
+  background: -moz-linear-gradient(45deg, $color-secondary, $color-primary);
+  background: linear-gradient(45deg, $color-secondary, $color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}

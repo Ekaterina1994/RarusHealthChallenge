@@ -1,0 +1,11 @@
+@import "src/index.scss";
+
+.button {
+  background-color: $color-secondary;
+  border: none;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+  
+}

@@ -1,0 +1,11 @@
+@import "src/index.scss";
+
+.input {
+  border: $border-width solid $color-secondary;
+
+  &:hover,
+  &:focus {
+    border: $border-width solid $color-primary;
+  }
+
+}
