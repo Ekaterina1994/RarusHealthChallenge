@@ -2,13 +2,17 @@ import {useState, useEffect} from "react";
 import {Input} from "antd";
 import {getDate} from "src/utils/getDate";
 import {getRandomNumber} from "src/utils/getRandomNumber";
-import {useMessages} from "src/component/messageBlock/MessagesContext";
+import {messagesList, useMessages} from "src/component/messageBlock/MessagesContext";
+import {useInputValue} from "src/component/footer/FooterContext";
+import {fakeMessagesList} from "src/utils/empty";
 import styles from "src/component/footer/inputField/InputField.module.scss";
+
+// let current = 0;
 
 export const InputField = () => {
   const {messagesValues, setMessagesValues} = useMessages();
+  const {inputValue, setInputValue} = useInputValue();
 
-  const [inputValue, setInputValue] = useState("");
   const [updated, setUpdated] = useState("");
 
   const copy = Object.assign([], messagesValues);
@@ -31,6 +35,14 @@ export const InputField = () => {
 
   };
 
+
+  const getMessage = () => {
+    const timerId = setTimeout(() => {
+      copy.push(fakeMessagesList[ getRandomNumber(0, 7)]);
+      setMessagesValues(copy);
+    }, 5000);
+  };
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
@@ -47,7 +59,7 @@ export const InputField = () => {
   };
 
   useEffect(() => {
-    console.log(copy);
+    getMessage();
   }, [updated]);
 
   return (

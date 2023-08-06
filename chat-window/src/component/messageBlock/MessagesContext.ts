@@ -10,24 +10,24 @@ export const messagesList = [
       name: "Olga",
     },
   },
-  {
-    id: 2,
-    text: "Heyyyyyy",
-    date: "2023.04.05",
-    user: {
-      id: 1,
-      name: "Olga",
-    },
-  },
-  {
-    id: 3,
-    text: "Hiiii",
-    date: "2023.07.05",
-    user: {
-      id: 1,
-      name: "Olga",
-    },
-  },
+  // {
+  //   id: 2,
+  //   text: "Heyyyyyy",
+  //   date: "2023.04.05",
+  //   user: {
+  //     id: 1,
+  //     name: "Olga",
+  //   },
+  // },
+  // {
+  //   id: 3,
+  //   text: "Hiiii",
+  //   date: "2023.07.05",
+  //   user: {
+  //     id: 1,
+  //     name: "Olga",
+  //   },
+  // },
 ];
 
 

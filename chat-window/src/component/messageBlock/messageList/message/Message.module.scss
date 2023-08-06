@@ -1,4 +1,4 @@
-@import 'src/index.scss';
+@import "src/index.scss";
 
 .wrapper,
 .wrapperOwner {
@@ -52,4 +52,16 @@
 .date {
   font-size: 11px;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .messageWrapper {
+    width: 85%;
+  }
+
+  .cycle,
+  .cycleOwner {
+    width: 40px;
+    height: 40px;
+  }
 }
