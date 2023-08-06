@@ -2,12 +2,10 @@ import {useState, useEffect} from "react";
 import {Input} from "antd";
 import {getDate} from "src/utils/getDate";
 import {getRandomNumber} from "src/utils/getRandomNumber";
-import {messagesList, useMessages} from "src/component/messageBlock/MessagesContext";
+import {useMessages} from "src/component/messageBlock/MessagesContext";
 import {useInputValue} from "src/component/footer/FooterContext";
-import {fakeMessagesList} from "src/utils/empty";
+import {fakeMessagesList} from "src/utils/fakeMessagesList";
 import styles from "src/component/footer/inputField/InputField.module.scss";
-
-// let current = 0;
 
 export const InputField = () => {
   const {messagesValues, setMessagesValues} = useMessages();
@@ -18,7 +16,6 @@ export const InputField = () => {
   const copy = Object.assign([], messagesValues);
 
   const func = () => {
-
     copy.push(
       {
         // It's better to use uuid library
@@ -27,20 +24,30 @@ export const InputField = () => {
         date: `${getDate()}`,
         user: {
           id: 2,
-          name: "Victor",
+          name: "Owner",
         },
       },
     );
-    setMessagesValues(copy);
 
+    setMessagesValues(copy);
   };
 
-
   const getMessage = () => {
-    const timerId = setTimeout(() => {
-      copy.push(fakeMessagesList[ getRandomNumber(0, 7)]);
+    const timer = setTimeout(() => {
+      copy.push(
+        {
+          // It's better to use uuid library
+          id: getRandomNumber(1, 100),
+          text: `${fakeMessagesList[getRandomNumber(0, 7)]}`,
+          date: `${getDate()}`,
+          user: {
+            id: 1,
+            name: "Olga",
+          },
+        },
+      );
       setMessagesValues(copy);
-    }, 5000);
+    }, 7000);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

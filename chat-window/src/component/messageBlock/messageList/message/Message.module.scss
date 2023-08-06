@@ -5,6 +5,10 @@
   display: flex;
   gap: 2%;
   align-items: center;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: msg;
 }
 
 .wrapperOwner {
@@ -63,5 +67,18 @@
   .cycleOwner {
     width: 40px;
     height: 40px;
+  }
+}
+
+
+@keyframes msg {
+  0% {
+    top: -4em;
+    left: -4em;
+    transform: scale(0);
+  }
+  100% {
+    top: 0;
+    left: 0;
   }
 }

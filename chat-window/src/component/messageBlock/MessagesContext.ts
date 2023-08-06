@@ -1,35 +1,17 @@
 import {createContext, useContext} from "react";
+import {getDate} from "src/utils/getDate";
 
 export const messagesList = [
   {
     id: 1,
     text: "Hey",
-    date: "2023.04.05",
+    date: `${getDate()}`,
     user: {
       id: 1,
       name: "Olga",
     },
   },
-  // {
-  //   id: 2,
-  //   text: "Heyyyyyy",
-  //   date: "2023.04.05",
-  //   user: {
-  //     id: 1,
-  //     name: "Olga",
-  //   },
-  // },
-  // {
-  //   id: 3,
-  //   text: "Hiiii",
-  //   date: "2023.07.05",
-  //   user: {
-  //     id: 1,
-  //     name: "Olga",
-  //   },
-  // },
 ];
-
 
 const STUB_SET_MESSAGES = () => undefined;
 const STUB_MESSAGES_VALUES = messagesList;

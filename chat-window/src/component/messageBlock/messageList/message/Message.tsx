@@ -7,7 +7,7 @@ interface Message {
 }
 
 export const Message = (props: Message) => {
-  const idCondition = props.id > 10;
+  const idCondition = props.id > 100;
 
   return (
     <div className={(idCondition) ? styles.wrapperOwner : styles.wrapper}>
