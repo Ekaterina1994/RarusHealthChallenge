@@ -84,6 +84,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "brace-style": "error",
     "react/prop-types": "off",
+    // "no-console": "error",
     "no-mixed-operators": "error",
     "eqeqeq": "error",
     "dot-notation": ["off"],

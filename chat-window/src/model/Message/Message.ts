@@ -3,7 +3,14 @@ import {User} from "src/model/User/User";
 /**
  * Message and info about message
  */
-export class Message {
+
+
+export class IMessage {
+
+  /**
+   * Message's ID
+   */
+  public id: string;
 
   /**
    * Message's text
@@ -13,14 +20,15 @@ export class Message {
   /**
    * Date and time when message was sent
    */
-  public date: Date;
+  public date: string;
 
   /**
    * Message's author
    */
   public user: User;
 
-  constructor(messageData: Message) {
+  constructor(messageData: IMessage) {
+    this.id = messageData.id;
     this.text = messageData.text;
     this.date = messageData.date;
     this.user = messageData.user;
@@ -29,8 +37,8 @@ export class Message {
   /**
    * Get name of message's user
    */
-  public getUserName() {
-    return `${this.user.name}`;
-  }
+  // public getUserName() {
+  //   return `${this.user.name}`;
+  // }
 
 }

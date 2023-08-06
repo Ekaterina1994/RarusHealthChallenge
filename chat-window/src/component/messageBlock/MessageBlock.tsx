@@ -1,10 +1,10 @@
-import {Message} from "src/component/messageBlock/message/Message";
+import {MessageList} from "src/component/messageBlock/messageList/MessageList";
 import styles from "src/component/messageBlock/MessageBlock.module.scss";
 
 export const MessageBlock = () => {
   return (
     <div className={styles.wrapper}>
-      <Message />
+      <MessageList />
     </div>
   );
 };
