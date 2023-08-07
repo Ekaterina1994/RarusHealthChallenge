@@ -1,53 +1,42 @@
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import {Input} from "antd";
-import {getDate} from "src/utils/getDate";
-import {getRandomNumber} from "src/utils/getRandomNumber";
 import {useMessages} from "src/component/messageBlock/MessagesContext";
 import {useInputValue} from "src/component/footer/FooterContext";
 import {fakeMessagesList} from "src/utils/fakeMessagesList";
+import {getNewMessage} from "src/utils/getNewMessage";
+import {getRandomNumber} from "src/utils/getRandomNumber";
 import styles from "src/component/footer/inputField/InputField.module.scss";
+
+export const OWNER_NAME = "Owner";
+export const OWNER_ID = 2;
+export const FRIEND_NAME = "Olga";
+export const FRIEND_ID = 1;
 
 export const InputField = () => {
   const {messagesValues, setMessagesValues} = useMessages();
-  const {inputValue, setInputValue} = useInputValue();
-
-  const [updated, setUpdated] = useState("");
+  const {inputValue, setInputValue, updatedValue, setUpdatedValue} = useInputValue();
 
   const copy = Object.assign([], messagesValues);
 
-  const func = () => {
-    copy.push(
-      {
-        // It's better to use uuid library
-        id: getRandomNumber(100, 10000),
-        text: `${inputValue}`,
-        date: `${getDate()}`,
-        user: {
-          id: 2,
-          name: "Owner",
-        },
-      },
-    );
+  const sendMessage = () => {
+    // It's better to use uuid library
+    const idMessage = getRandomNumber(100, 10000);
+    const newMessage = getNewMessage(idMessage, inputValue, OWNER_ID, OWNER_NAME);
+    copy.push(newMessage);
 
     setMessagesValues(copy);
   };
 
-  const getMessage = () => {
-    const timer = setTimeout(() => {
-      copy.push(
-        {
-          // It's better to use uuid library
-          id: getRandomNumber(1, 100),
-          text: `${fakeMessagesList[getRandomNumber(0, 7)]}`,
-          date: `${getDate()}`,
-          user: {
-            id: 1,
-            name: "Olga",
-          },
-        },
-      );
+  const getFriendMessage = () => {
+    setTimeout(() => {
+      // It's better to use uuid library
+      const idMessage = getRandomNumber(1, 100);
+      const fakeText = fakeMessagesList[getRandomNumber(0, 7)];
+      const newMessage = getNewMessage(idMessage, fakeText, FRIEND_ID, FRIEND_NAME);
+      copy.push(newMessage);
+
       setMessagesValues(copy);
-    }, 7000);
+    }, 2000);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,18 +45,16 @@ export const InputField = () => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      setUpdated(inputValue);
-      console.log(inputValue);
-      console.log(getDate());
-      func();
+      setUpdatedValue(inputValue);
+      sendMessage();
       setMessagesValues(copy);
       setInputValue("");
     }
   };
 
   useEffect(() => {
-    getMessage();
-  }, [updated]);
+    getFriendMessage();
+  }, [updatedValue]);
 
   return (
     <Input
