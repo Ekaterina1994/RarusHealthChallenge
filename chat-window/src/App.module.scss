@@ -5,3 +5,10 @@
   border: $border-width solid $color-primary;
   box-shadow: 5px 5px 5px $color-text;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+  }
+}

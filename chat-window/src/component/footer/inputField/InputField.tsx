@@ -36,7 +36,7 @@ export const InputField = () => {
       copy.push(newMessage);
 
       setMessagesValues(copy);
-    }, 2000);
+    }, 5000);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -5,3 +5,9 @@
   display: flex;
   gap: 2%;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: $padding-mobile;
+  }
+}

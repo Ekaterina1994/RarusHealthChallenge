@@ -8,5 +8,11 @@
 .title {
   text-transform: uppercase;
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: $padding-mobile;
+  }
 }
