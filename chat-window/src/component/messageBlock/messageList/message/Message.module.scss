@@ -1,0 +1,88 @@
+@import "src/index.scss";
+
+.wrapper,
+.wrapperOwner {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: msg;
+  padding-top: 15px;
+}
+
+.wrapperOwner {
+  justify-content: right;
+}
+
+.cycle,
+.cycleOwner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-primary;
+}
+
+.cycleOwner {
+  background-color: white;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 40%;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.text,
+.textOwner {
+  border-radius: 5px;
+  padding: $padding-desktop;
+  word-wrap: wrap;
+  background-color: white;
+  border: none;
+}
+
+.textOwner {
+  border: $border-width solid $color-primary;
+  background-color: $color-primary;
+}
+
+.date {
+  font-size: 11px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .wrapper,
+  .wrapperOwner {
+    padding-top: 0;
+  }
+  .messageWrapper {
+    width: 85%;
+  }
+
+  .cycle,
+  .cycleOwner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@keyframes msg {
+  0% {
+    top: -4em;
+    left: -4em;
+    transform: scale(0);
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,13 @@
+@import 'src/index.scss';
+
+.wrapper {
+  padding: $padding-desktop;
+  display: flex;
+  gap: 2%;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: $padding-mobile;
+  }
+}

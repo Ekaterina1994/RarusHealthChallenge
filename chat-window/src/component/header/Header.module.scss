@@ -1,0 +1,18 @@
+@import 'src/index.scss';
+
+.wrapper {
+  padding: $padding-desktop;
+  background-color: $color-primary;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: $padding-mobile;
+  }
+}

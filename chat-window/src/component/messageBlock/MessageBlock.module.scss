@@ -1,0 +1,22 @@
+@import 'src/index.scss';
+
+.wrapper {
+  padding: $padding-desktop;
+  background-color: $color-secondary;
+  height: 50vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 580px) {
+  .wrapper {
+    min-height: 75vh;
+  }
+}
