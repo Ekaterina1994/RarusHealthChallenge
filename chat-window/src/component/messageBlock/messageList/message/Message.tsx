@@ -1,4 +1,6 @@
+import {ButtonLike} from "src/component/messageBlock/messageList/message/buttonLike/ButtonLike";
 import styles from "src/component/messageBlock/messageList/message/Message.module.scss";
+
 interface Message {
   text: string;
   date: string;
@@ -10,7 +12,10 @@ export const Message = (props: Message) => {
   const idCondition = props.id > 100;
 
   return (
-    <div className={(idCondition) ? styles.wrapperOwner : styles.wrapper}>
+    <div
+      id={`${props.id}`}
+      className={(idCondition) ? styles.wrapperOwner : styles.wrapper}
+    >
       <div className={(idCondition) ? styles.cycleOwner : styles.cycle} />
       <div className={styles.messageWrapper}>
         <p className={styles.username}>
@@ -23,6 +28,7 @@ export const Message = (props: Message) => {
           {props.date}
         </p>
       </div>
+      <ButtonLike />
     </div>
   );
 };

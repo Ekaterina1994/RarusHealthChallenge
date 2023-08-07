@@ -18,11 +18,12 @@ React (useContext), TypeScript, SCSS modules, ESLint, Ant Design.
  - After the user enters a message, he will automatically receive a new message after 5 seconds
  - Message's animation
  - Responsive application (desktop, mobile (max-width: 768px))
+ - User can like messages
 ___
 
 ### Run in dev mode locally
 1. Download repository
-2. Install all dependencies in root directory 
+2. Install all dependencies in root directory (folder chat-window)
 
 ```npm i```
 

@@ -11,6 +11,12 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    min-height: 79vh;
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 580px) {
+  .wrapper {
+    min-height: 75vh;
   }
 }
